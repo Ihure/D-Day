@@ -1,0 +1,28 @@
+{
+  "root": "apps/dday-e2e",
+  "sourceRoot": "apps/dday-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/dday-e2e/cypress.json",
+        "devServerTarget": "dday:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "dday:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dday-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dday"]
+}

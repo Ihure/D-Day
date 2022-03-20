@@ -1,0 +1,88 @@
+{
+  "projectType": "application",
+  "root": "apps/dday",
+  "sourceRoot": "apps/dday/src",
+  "prefix": "madiro-hack",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/dday",
+        "index": "apps/dday/src/index.html",
+        "main": "apps/dday/src/main.ts",
+        "polyfills": "apps/dday/src/polyfills.ts",
+        "tsConfig": "apps/dday/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/dday/src/favicon.ico", "apps/dday/src/assets"],
+        "styles": ["apps/dday/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/dday/src/environments/environment.ts",
+              "with": "apps/dday/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "dday:build:production"
+        },
+        "development": {
+          "browserTarget": "dday:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "dday:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/dday/src/**/*.ts", "apps/dday/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/dday"],
+      "options": {
+        "jestConfig": "apps/dday/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
