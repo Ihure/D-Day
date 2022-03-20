@@ -15,7 +15,7 @@
         "tsConfig": "apps/dday/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/dday/src/favicon.ico", "apps/dday/src/assets"],
-        "styles": ["apps/dday/src/styles.scss"],
+        "styles": ["apps/dday/src/theme/styles.scss"],
         "scripts": []
       },
       "configurations": {
