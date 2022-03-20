@@ -17,3 +17,7 @@ export const Setting = {
   CREDENTIALS: 'credentials',
   VALIDATION_ERRORS: 'validationErrors',
 };
+
+export const UserSetting = {
+  LOGGED_USER: 'loggedUser',
+};

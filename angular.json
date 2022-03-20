@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "data": "libs/data",
     "dday": "apps/dday",
     "dday-e2e": "apps/dday-e2e"
   }

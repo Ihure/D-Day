@@ -16,10 +16,23 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 
 // modules
 import { AppRoutingModule } from './app.routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, SocialLoginModule, AppRoutingModule],
-  declarations: [AppComponent, NxWelcomeComponent, LoginComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    SocialLoginModule,
+    AppRoutingModule,
+    SharedModule,
+  ],
+  declarations: [
+    AppComponent,
+    NxWelcomeComponent,
+    LoginComponent,
+    DashboardComponent,
+  ],
   providers: [
     {
       provide: 'SocialAuthServiceConfig',
