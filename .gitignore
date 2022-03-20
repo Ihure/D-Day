@@ -41,4 +41,4 @@ Thumbs.db
 .angular
 
 # Sensitive info
-.env
+#.env
