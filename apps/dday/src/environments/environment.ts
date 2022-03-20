@@ -1,9 +1,10 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { Environment } from '../app/shared/constants';
 
 export const environment = {
   production: false,
+  environment: Environment.DEV,
+  clientId:
+    '735356719192-jj50tk7ioq3729ptlftith68hvshkdi0.apps.googleusercontent.com',
 };
 
 /*
