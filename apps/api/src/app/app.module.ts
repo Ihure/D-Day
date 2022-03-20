@@ -11,12 +11,12 @@ import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    AuthModule,
     UserModule,
     ConfigModule.forRoot(),
     MongooseModule.forRoot(
       `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASS}@dda1.x6b6b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
     ),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
